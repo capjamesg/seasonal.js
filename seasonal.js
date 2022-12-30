@@ -23,10 +23,14 @@ var day = today.getDate();
 
 var todayFormatted = month + '-' + day;
 
-// if december and no specified emoji, change emojis to snow
-if (month == 12 && !seasonalEmojiDict[todayFormatted]) {
+var monthLongSeasonalEmojis = {
+    "12": "❄️",
+    "10": "🎃"
+}
+
+if (monthLongSeasonalEmojis[month.toString()]) {
     for (var i = 0; i < seasonalEmoji.length; i++) {
-        seasonalEmoji[i].innerHTML = '❄️';
+        seasonalEmoji[i].innerHTML = monthLongSeasonalEmojis[month.toString()];
     }
 } else {
     for (var i = 0; i < seasonalEmoji.length; i++) {
